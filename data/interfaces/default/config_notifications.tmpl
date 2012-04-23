@@ -258,13 +258,13 @@
 
                 <div class="component-group clearfix">
                     <div class="component-group-desc">
-                        <h3><a href="http://synology.com/" onclick="window.open(this.href, '_blank'); return false;"><img src="$sbRoot/images/notifiers/synoindex.gif" alt="" title="Synology Indexer" width="16" height="16" /> Synology DSM </a></h3>
+                        <h3><a href="http://synology.com/" onclick="window.open(this.href, '_blank'); return false;"><img src="$sbRoot/images/notifiers/synoindex.gif" alt="" title="Synology DSM" width="16" height="16" /> Synology DSM </a></h3>
                         <p>Synology DSM is the web interface on the synology NAS.</p>
                     </div>
 
                     <fieldset class="component-group-list">
                         <div class="field-pair">
-                            <input type="checkbox" class="enabler" name="use_synoindex" id="use_synodsm" #if $sickbeard.USE_SYNODSM then "checked=\"checked\"" else ""# /> 
+                            <input type="checkbox" class="enabler" name="use_synodsm" id="use_synodsm" #if $sickbeard.USE_SYNODSM then "checked=\"checked\"" else ""# /> 
                             <label class="clearfix" for="use_synodsm">
                                 <span class="component-title">Enable</span>
                                 <span class="component-desc">Should Sick Beard send notifications to the Synology NAS DSM?<br /><br />
@@ -278,15 +278,15 @@
 
                         <div id="content_use_synodsm">
                             <div class="field-pair">
-                                <input type="checkbox" name="xbmc_notify_onsnatch" id="synodsm_notify_onsnatch" #if $sickbeard.SYNODSM_NOTIFY_ONSNATCH then "checked=\"checked\"" else ""# />
-                                <label class="clearfix" for="xbmc_notify_onsnatch">
+                                <input type="checkbox" name="synodsm_notify_onsnatch" id="synodsm_notify_onsnatch" #if $sickbeard.SYNODSM_NOTIFY_ONSNATCH then "checked=\"checked\"" else ""# />
+                                <label class="clearfix" for="synodsm_notify_onsnatch">
                                     <span class="component-title">Notify on Snatch</span>
                                     <span class="component-desc">Send notification when we start a download?</span>
                                 </label>
                             </div>
                             <div class="field-pair">
-                                <input type="checkbox" name="xbmc_notify_ondownload" id="synodsm_notify_ondownload" #if $sickbeard.SYNODSM_NOTIFY_ONDOWNLOAD then "checked=\"checked\"" else ""# />
-                                <label class="clearfix" for="xbmc_notify_ondownload">
+                                <input type="checkbox" name="synodsm_notify_ondownload" id="synodsm_notify_ondownload" #if $sickbeard.SYNODSM_NOTIFY_ONDOWNLOAD then "checked=\"checked\"" else ""# />
+                                <label class="clearfix" for="synodsm_notify_ondownload">
                                     <span class="component-title">Notify on Download</span>
                                     <span class="component-desc">Send notification when we finish a download?</span>
                                 </label>
