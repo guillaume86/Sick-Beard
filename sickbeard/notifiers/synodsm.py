@@ -27,7 +27,6 @@ class synoDsmNotifier:
       
     synonotify_cmd = ['/usr/syno/bin/synodsmnotify', '@users', title, message]
     logger.log(u"Executing command "+str(synonotify_cmd))
-    logger.log(u"Absolute path to command: "+ek.ek(os.path.abspath, synonotify_cmd[0]), logger.DEBUG)
     try:
       p = subprocess.Popen(synonotify_cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, cwd=sickbeard.PROG_DIR)
       out, err = p.communicate() #@UnusedVariable
