@@ -1218,7 +1218,7 @@ class ConfigNotifications:
                           use_pytivo=None, pytivo_notify_onsnatch=None, pytivo_notify_ondownload=None, pytivo_update_library=None, 
                           pytivo_host=None, pytivo_share_name=None, pytivo_tivo_name=None,
                           use_nma=None, nma_notify_onsnatch=None, nma_notify_ondownload=None, nma_api=None, nma_priority=0,
-                          use_synodsm=None, synodsm_notify_onsnatch=None, synodsm_notify_ondownload=None,						  ):
+                          use_synodsm=None, synodsm_notify_onsnatch=None, synodsm_notify_ondownload=None):
 
         results = []
 
@@ -2194,6 +2194,16 @@ class Home:
             return "Test NMA notice sent successfully"
         else:
             return "Test NMA notice failed"
+
+    @cherrypy.expose
+    def testSYNODSM(self):
+        cherrypy.response.headers['Cache-Control'] = "max-age=0,no-cache,no-store"
+        
+        result = notifiers.synodsm_notifier.test_notify()
+        if result:
+            return "Test SYNO DSM notice sent successfully"
+        else:
+            return "Test SYNO DSM notice failed"
 
     @cherrypy.expose
     def shutdown(self):
