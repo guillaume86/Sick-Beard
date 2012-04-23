@@ -142,4 +142,10 @@ $(document).ready(function(){
         var nma_result = $.get(sbRoot+"/home/testNMA", {'nma_api': nma_api, 'nma_priority': nma_priority}, 
         function (data){ $('#testNMA-result').html(data); });
     });
+	
+    $('#testDSM').click(function(){
+        $('#testSYNODSM-result').html(loading);
+        var nma_result = $.get(sbRoot+"/home/testDSM", {}, 
+        function (data){ $('#testSYNODSM-result').html(data); });
+    });
 });
