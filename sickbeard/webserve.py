@@ -1217,7 +1217,8 @@ class ConfigNotifications:
                           use_trakt=None, trakt_username=None, trakt_password=None, trakt_api=None,
                           use_pytivo=None, pytivo_notify_onsnatch=None, pytivo_notify_ondownload=None, pytivo_update_library=None, 
                           pytivo_host=None, pytivo_share_name=None, pytivo_tivo_name=None,
-                          use_nma=None, nma_notify_onsnatch=None, nma_notify_ondownload=None, nma_api=None, nma_priority=0 ):
+                          use_nma=None, nma_notify_onsnatch=None, nma_notify_ondownload=None, nma_api=None, nma_priority=0,
+                          use_synodsm=None, synodsm_notify_onsnatch=None, synodsm_notify_ondownload=None,						  ):
 
         results = []
 
@@ -1400,6 +1401,22 @@ class ConfigNotifications:
             nma_notify_ondownload = 1
         else:
             nma_notify_ondownload = 0
+			
+			
+        if use_synodsm == "on":
+            use_synodsm = 1
+        else:
+            use_synodsm = 0
+
+        if synodsm_notify_onsnatch == "on":
+            synodsm_notify_onsnatch = 1
+        else:
+            synodsm_notify_onsnatch = 0
+
+        if synodsm_notify_ondownload == "on":
+            synodsm_notify_ondownload = 1
+        else:
+            synodsm_notify_ondownload = 0
 
         sickbeard.USE_XBMC = use_xbmc
         sickbeard.XBMC_NOTIFY_ONSNATCH = xbmc_notify_onsnatch
@@ -1480,6 +1497,10 @@ class ConfigNotifications:
         sickbeard.NMA_NOTIFY_ONDOWNLOAD = nma_notify_ondownload
         sickbeard.NMA_API = nma_api
         sickbeard.NMA_PRIORITY = nma_priority
+		
+        sickbeard.USE_SYNODSM = use_synodsm
+        sickbeard.SYNODSM_NOTIFY_ONSNATCH = synodsm_notify_onsnatch
+        sickbeard.SYNODSM_NOTIFY_ONDOWNLOAD = synodsm_notify_ondownload
         
         sickbeard.save_config()
 
