@@ -2196,7 +2196,7 @@ class Home:
             return "Test NMA notice failed"
 
     @cherrypy.expose
-    def testSYNODSM(self):
+    def testDSM(self):
         cherrypy.response.headers['Cache-Control'] = "max-age=0,no-cache,no-store"
         
         result = notifiers.synodsm_notifier.test_notify()
