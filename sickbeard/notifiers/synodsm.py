@@ -5,7 +5,7 @@ import subprocess
 
 import sickbeard
 
-from sickbeard import logger
+from sickbeard import logger, common
 from sickbeard.exceptions import ex
 
 class synoDsmNotifier:
