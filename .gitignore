@@ -19,6 +19,7 @@ server.key
 *.tmp
 *.wpr
 *.project
+*.pydevproject
 *.cproject
 *.tmproj
 *.tmproject
@@ -33,4 +34,4 @@ desktop.ini
 ehthumbs.db
 Thumbs.db
 .directory
-*~
+*~master
