@@ -265,6 +265,10 @@ NMJ_MOUNT = None
 
 USE_SYNOINDEX = False
 
+USE_SYNODSM = False
+SYNODSM_NOTIFY_ONSNATCH = False
+SYNODSM_NOTIFY_ONDOWNLOAD = False
+
 USE_TRAKT = False
 TRAKT_USERNAME = None
 TRAKT_PASSWORD = None
@@ -283,10 +287,6 @@ NMA_NOTIFY_ONSNATCH = False
 NMA_NOTIFY_ONDOWNLOAD = False
 NMA_API = None
 NMA_PRIORITY = 0
-
-USE_SYNODSM = False
-SYNODSM_NOTIFY_ONSNATCH = False
-SYNODSM_NOTIFY_ONDOWNLOAD = False
 
 COMING_EPS_LAYOUT = None
 COMING_EPS_DISPLAY_PAUSED = None
@@ -416,6 +416,7 @@ def initialize(consoleLogging=True):
                 USE_BOXCAR, BOXCAR_USERNAME, BOXCAR_PASSWORD, BOXCAR_NOTIFY_ONDOWNLOAD, BOXCAR_NOTIFY_ONSNATCH, \
                 USE_PUSHOVER, PUSHOVER_USERKEY, PUSHOVER_NOTIFY_ONDOWNLOAD, PUSHOVER_NOTIFY_ONSNATCH, \
                 USE_LIBNOTIFY, LIBNOTIFY_NOTIFY_ONSNATCH, LIBNOTIFY_NOTIFY_ONDOWNLOAD, USE_NMJ, NMJ_HOST, NMJ_DATABASE, NMJ_MOUNT, USE_SYNOINDEX, \
+                USE_SYNODSM, SYNODSM_NOTIFY_ONSNATCH, SYNODSM_NOTIFY_ONDOWNLOAD, \
                 USE_BANNER, USE_LISTVIEW, METADATA_XBMC, METADATA_MEDIABROWSER, METADATA_PS3, METADATA_SYNOLOGY, metadata_provider_dict, \
                 NEWZBIN, NEWZBIN_USERNAME, NEWZBIN_PASSWORD, GIT_PATH, MOVE_ASSOCIATED_FILES, \
                 COMING_EPS_LAYOUT, COMING_EPS_SORT, COMING_EPS_DISPLAY_PAUSED, METADATA_WDTV, METADATA_TIVO, IGNORE_WORDS
@@ -652,6 +653,10 @@ def initialize(consoleLogging=True):
         NMJ_MOUNT = check_setting_str(CFG, 'NMJ', 'nmj_mount', '')
 
         USE_SYNOINDEX = bool(check_setting_int(CFG, 'Synology', 'use_synoindex', 0))
+        
+        USE_SYNODSM = bool(check_setting_int(CFG, 'Synology', 'use_synodsm', 0))
+        SYNODSM_NOTIFY_ONSNATCH = bool(check_setting_int(CFG, 'Synology', 'synodsm_notify_onsnatch', 0))
+        SYNODSM_NOTIFY_ONDOWNLOAD = bool(check_setting_int(CFG, 'Synology', 'synodsm_notify_ondownload', 0))
 
         USE_TRAKT = bool(check_setting_int(CFG, 'Trakt', 'use_trakt', 0))
         TRAKT_USERNAME = check_setting_str(CFG, 'Trakt', 'trakt_username', '')
@@ -1196,6 +1201,10 @@ def save_config():
 
     new_config['Synology'] = {}
     new_config['Synology']['use_synoindex'] = int(USE_SYNOINDEX)
+    
+    new_config['Synology']['use_synodsm'] = int(USE_SYNOINDEX)
+    new_config['Synology']['synodsm_notify_onsnatch'] = int(USE_SYNOINDEX)
+    new_config['Synology']['synodsm_notify_ondownload'] = int(USE_SYNOINDEX)
 
     new_config['Trakt'] = {}
     new_config['Trakt']['use_trakt'] = int(USE_TRAKT)
